@@ -15,8 +15,9 @@ function App() {
 	const [countries, setCountries] = useState([]);
 	const [country, setCountry] = useState('worldwide');
 	const [countryInfo, setCountryInfo] = useState({});
-	const [tableData, setTableData] = useState(['cases']);
-	const [mapCenter, setMapCenter] = useState({ lat: -34.80746, lng: -40.4796 });
+	const [tableData, setTableData] = useState([]);
+	const [casesType, setCasesType] = useState("cases");
+	const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
 	const [mapZoom, setMapZoom] = useState(3);
 	const [mapCountries, setMapCountries] = useState([]);
 
@@ -49,6 +50,7 @@ function App() {
 					
 				let sortedData = sortData(data);
 				setTableData(sortedData);
+				setMapCountries(data);
                 setCountries(countries);
             });
         };
@@ -106,7 +108,7 @@ function App() {
 					<InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
 				</div>
 
-				<Map center={mapCenter} zoom={mapZoom}/>
+				<Map countries={mapCountries} casesType={casesType} center={mapCenter} zoom={mapZoom}/>
 			</div>
 
 			<div className="app__right">
