@@ -4,12 +4,16 @@ import './Table.scss';
 function Table({ countries }) {
     return (
         <div className="table">
-            {countries.map(({country, cases}) => (
-                <tr>
-                    <td>{country}</td>
-                    <td>{cases}</td>
-                </tr>
-            ))}            
+            <table>
+                <tbody>
+                    {countries.map(({country, cases, countryInfo}) => (
+                        <tr key={country}>
+                            <td>{country}</td>
+                            <td>{cases}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>      
         </div>
     )
 }
