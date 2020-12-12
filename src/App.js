@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import InfoBox from './components/infoBox/InfoBox';
 import Map from './components/map/Map';
 import Table from './components/table/Table';
+import LineGraph from './components/lineGraph/LineGraph';
+
 import { sortData } from './utils/sortData';
 
 import { MenuItem, FormControl, Select, Card, CardContent } from "@material-ui/core";
@@ -102,6 +104,7 @@ function App() {
 						<Table countries={tableData} />
 						
 						<h3>Worldwide new cases</h3>
+						<LineGraph />
 
 					</CardContent>
 				</Card>
