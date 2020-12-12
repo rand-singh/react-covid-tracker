@@ -7,8 +7,8 @@ function Table({ countries }) {
         <div className="table">
             <table>
                 <tbody>
-                    {countries.map(({country, cases, countryInfo}) => (
-                        <tr key={country}>
+                    {countries.map(({country, cases, continent}) => (
+                        <tr key={country + continent}>
                             <td>{country}</td>
                             <td>{numeral(cases).format("0,0")}</td>
                         </tr>

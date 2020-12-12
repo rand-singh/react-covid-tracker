@@ -8,13 +8,17 @@ import { sortData } from './utils/sortData';
 
 import { MenuItem, FormControl, Select, Card, CardContent } from "@material-ui/core";
 
+import "leaflet/dist/leaflet.css";
 import './App.scss';
 
 function App() {
 	const [countries, setCountries] = useState([]);
 	const [country, setCountry] = useState('worldwide');
 	const [countryInfo, setCountryInfo] = useState({});
-	const [tableData, setTableData] = useState([])
+	const [tableData, setTableData] = useState(['cases']);
+	const [mapCenter, setMapCenter] = useState({ lat: -34.80746, lng: -40.4796 });
+	const [mapZoom, setMapZoom] = useState(3);
+	const [mapCountries, setMapCountries] = useState([]);
 
 	/**
 	 * Get data on initial load only for worldwide
@@ -43,7 +47,7 @@ function App() {
                         }
 					));
 					
-				const sortedData = sortData(data);
+				let sortedData = sortData(data);
 				setTableData(sortedData);
                 setCountries(countries);
             });
@@ -69,6 +73,14 @@ function App() {
 			.then(data => {
 				setCountry(countryCode);
 				setCountryInfo(data);
+				setMapCenter(
+					{
+						lat: data.countryInfo.lat, 
+						lng: data.countryInfo.long
+					}
+				);
+				setMapCenter({lat: data.countryInfo.lat, lng: data.countryInfo.long});
+				setMapZoom(4);				
 			});
 	};
 	
@@ -94,7 +106,7 @@ function App() {
 					<InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
 				</div>
 
-				<Map />
+				<Map center={mapCenter} zoom={mapZoom}/>
 			</div>
 
 			<div className="app__right">
