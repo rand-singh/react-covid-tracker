@@ -103,16 +103,16 @@ function App() {
 				</div>
 
 				<div className="app__stats">
-					<InfoBox onClick={e => setCasesType('cases')} title="Coronavirus Cases" cases={countryInfo.todayCases} total={countryInfo.cases}/>
-					<InfoBox onClick={e => setCasesType('recovered')} title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
-					<InfoBox onClick={e => setCasesType('deaths')} title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
+					<InfoBox isRed active={casesType === "cases"} onClick={e => setCasesType('cases')} title="Coronavirus Cases" cases={countryInfo.todayCases} total={countryInfo.cases}/>
+					<InfoBox active={casesType === "recovered"} onClick={e => setCasesType('recovered')} title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
+					<InfoBox isRed active={casesType === "deaths"} onClick={e => setCasesType('deaths')} title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
 				</div>
 
 				<Map countries={mapCountries} casesType={casesType} center={mapCenter} zoom={mapZoom}/>
 			</div>
 
 			<div className="app__right">
-				<Card>
+				<Card className="app__worldStats">
 					<CardContent>
 						<h3>Cases by Country</h3>
 						<Table countries={tableData} />

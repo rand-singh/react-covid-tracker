@@ -1,13 +1,28 @@
 .app__stats {
 	.infoBox {
 		flex: 1;
+		cursor: pointer;
+		border-top: 10px solid transparent;
 
 		&:not(:last-child) {
 			margin-right: 1rem;
 		}
 
+		&--selected {
+			border-color: greenyellow;
+
+			&.infoBox--red {
+				border-color: red;
+			}
+		}
+
+		&__cases--green {
+			color: lightgreen !important;
+		}
+
 		&__title {
 		}
+
 		&__cases {
 			color: #cc1034;
 			font-weight: 600;

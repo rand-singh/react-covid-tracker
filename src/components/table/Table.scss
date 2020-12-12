@@ -3,6 +3,10 @@
 	overflow-y: scroll;
 	height: 400px;
 
+	table {
+		width: 100%;
+	}
+
 	tr {
 		display: flex;
 		justify-content: space-between;
