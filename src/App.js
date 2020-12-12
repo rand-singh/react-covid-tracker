@@ -103,9 +103,9 @@ function App() {
 				</div>
 
 				<div className="app__stats">
-					<InfoBox title="Coronavirus Cases" cases={countryInfo.todayCases} total={countryInfo.cases}/>
-					<InfoBox title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
-					<InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
+					<InfoBox onClick={e => setCasesType('cases')} title="Coronavirus Cases" cases={countryInfo.todayCases} total={countryInfo.cases}/>
+					<InfoBox onClick={e => setCasesType('recovered')} title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.recovered}/>
+					<InfoBox onClick={e => setCasesType('deaths')} title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
 				</div>
 
 				<Map countries={mapCountries} casesType={casesType} center={mapCenter} zoom={mapZoom}/>
@@ -117,8 +117,8 @@ function App() {
 						<h3>Cases by Country</h3>
 						<Table countries={tableData} />
 						
-						<h3>Worldwide new cases</h3>
-						<LineGraph />
+						<h3>Worldwide {casesType}</h3>
+						<LineGraph casesType={casesType} />
 
 					</CardContent>
 				</Card>
