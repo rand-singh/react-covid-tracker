@@ -2,8 +2,6 @@ import React from 'react';
 import './Table.scss';
 
 function Table({ countries }) {
-    console.log(countries);
-
     return (
         <div className="table">
             {countries.map(({country, cases}) => (
@@ -16,4 +14,4 @@ function Table({ countries }) {
     )
 }
 
-export default Table
+export default Table;

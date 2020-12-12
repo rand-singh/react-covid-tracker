@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import InfoBox from './components/infoBox/InfoBox';
 import Map from './components/map/Map';
 import Table from './components/table/Table';
+import { sortData } from './utils/sortData';
 
 import { MenuItem, FormControl, Select, Card, CardContent } from "@material-ui/core";
 
@@ -22,7 +23,7 @@ function App() {
 			.then(data => {
 				setCountryInfo(data);
 			})
-	}, [])
+	}, []);
 
     /**
      * Get COVID-19 totals for all countries
@@ -40,7 +41,8 @@ function App() {
                         }
 					));
 					
-				setTableData(data);
+				const sortedData = sortData(data);
+				setTableData(sortedData);
                 setCountries(countries);
             });
         };
