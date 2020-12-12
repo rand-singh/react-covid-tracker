@@ -16,6 +16,12 @@ body {
 	&__left {
 		flex: 0.9;
 	}
+
+	&__right {
+		h3 {
+			margin-bottom: 1rem;
+		}
+	}
 }
 
 .app__header {

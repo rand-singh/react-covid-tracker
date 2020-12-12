@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, Typography } from "@material-ui/core";
 import './InfoBox.scss';
-import numeral from "numeral";
+import { prettyPrintStat } from '../../utils/prettyPrintStat';
 
 function InfoBox({ title, cases, total }) {
     return (
@@ -11,10 +11,10 @@ function InfoBox({ title, cases, total }) {
                     {title}
                 </Typography>
 
-                <h2 className="infoBox__cases">{numeral(cases).format("0,0")} <small>today</small></h2>
+                <h2 className="infoBox__cases">{prettyPrintStat(cases)} <small>today</small></h2>
 
                 <Typography className="infoBox__total">
-                    {numeral(total).format("0,0")} Total
+                    {prettyPrintStat(total)} Total
                 </Typography>
             </CardContent>
         </Card>

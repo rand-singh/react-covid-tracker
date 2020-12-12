@@ -1,0 +1,30 @@
+.app__stats {
+	.infoBox {
+		flex: 1;
+
+		&:not(:last-child) {
+			margin-right: 1rem;
+		}
+
+		&__title {
+		}
+		&__cases {
+			color: #cc1034;
+			font-weight: 600;
+			font-size: 1.75rem;
+			margin-bottom: 0.5rem;
+
+			small {
+				display: block;
+				font-size: 1rem;
+				margin-bottom: 1.5rem;
+			}
+		}
+		&__total {
+			color: #6c757d;
+			font-weight: 700;
+			font-size: 0.8rem;
+			margin-top: 0.5rem;
+		}
+	}
+}

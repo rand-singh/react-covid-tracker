@@ -4,7 +4,6 @@ import { Map as LeafletMap, TileLayer } from "react-leaflet";
 import { showDataOnMap } from '../../utils/showDataOnMap';
 
 function Map({countries, casesType, center, zoom}) {
-    console.log({countries})
     return (
         <>        
             <div className="map">
