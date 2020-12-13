@@ -51,5 +51,14 @@ body {
 @media (max-width: 990px) {
 	.app {
 		flex-direction: column;
+
+		&__stats {
+			flex-direction: column;
+
+			.infoBox:not(:last-child) {
+				margin-right: 0;
+				margin-bottom: 1rem;
+			}
+		}
 	}
 }
