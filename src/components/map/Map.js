@@ -15,6 +15,13 @@ function Map({countries, casesType, center, zoom}) {
                     {showDataOnMap(countries, casesType)}
                 </LeafletMap>
             </div>
+            
+		    <div className="bottom">
+                <br/>
+                <small>
+                    <code>Data sourced from <a href="https://disease.sh/">https://disease.sh/</a></code>
+                </small>
+			</div>
         </>
     )
 }
