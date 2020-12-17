@@ -39,7 +39,7 @@ export const showDataOnMap = (data, casesType="cases") => (
             <Popup>
                 <div className="infoContainer">
                     <div className="infoContainer__flag">
-                        <img src={country.countryInfo.flag} />                        
+                        <img src={country.countryInfo.flag} alt={country.country + " flag"} />
                     </div>
                     <div className="infoContainer__name">{country.country}</div>
                     <div className="infoContainer__confirmed">Cases: {numeral(country.cases).format("0,0")}</div>
