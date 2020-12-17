@@ -30,6 +30,9 @@ const options = {
                     parser: "MM/DD/YY",
                     tooltipFormat: "ll"
                 },
+                ticks: {  
+                    fontColor: "#f8f8f8"
+                }
             },
         ],
         yAxes: [
@@ -37,7 +40,8 @@ const options = {
                 gridLines: {
                     display: false,
                 },
-                ticks: {
+                ticks: {                    
+                    fontColor: "#f8f8f8",
                     callback: function(value, index, values) {
                         return numeral(value).format("0a")
                     },

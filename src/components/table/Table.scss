@@ -10,9 +10,11 @@
 	tr {
 		display: flex;
 		justify-content: space-between;
+		color: #f8f8f8;
+		border-bottom: 1px solid #181818;
 
 		&:nth-of-type(odd) {
-			background-color: #f3f2f8;
+			background-color: #303030;
 		}
 	}
 

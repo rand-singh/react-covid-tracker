@@ -3,6 +3,7 @@
 		flex: 1;
 		cursor: pointer;
 		border-top: 10px solid transparent;
+		background-color: #252525;
 
 		&:not(:last-child) {
 			margin-right: 1rem;
@@ -18,6 +19,10 @@
 
 		&__cases--green {
 			color: lightgreen !important;
+		}
+
+		p {
+			color: #f8f8f8;
 		}
 
 		&__title {
