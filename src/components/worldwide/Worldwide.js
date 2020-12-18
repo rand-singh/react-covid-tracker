@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
-
+import './Worldwide.scss';
+import moment from 'moment';
+import { prettyPrintStat } from '../../utils/prettyPrintStat';
 
 function Worldwide() {
     const [{updated, active, cases, deaths, recovered, tests, todayCases, todayDeaths, todayRecovered}, setWorldwideInfo] = useState({});
     
-    console.log(updated)
+    // console.log(moment(updated).fromNow());
+
     /**
-	 * Get global statistics
+	 * Get Global statistics
 	 */
 	useEffect(() => {
 		fetch('https://disease.sh/v3/covid-19/all')
@@ -17,22 +20,25 @@ function Worldwide() {
     }, []);
     
     return (
-        <div className="worldwide">
-            <code>Last updated on: { new Date(updated).toUTCString() }</code>
-
+        <section className="worldwide">
             <h1>Worldwide stats</h1>
-            <p>Active worldwide cases {active}</p>
+            <br/>
+            <code>Last updated on: <time> { new Date(updated).toUTCString() }</time></code>
+            <br/>
+            <code>Updated: <time>{moment(updated).fromNow()}</time></code>
+            <br/><br/>
+            <p>Active worldwide cases {prettyPrintStat(active)}</p>
             <p>Recorded worldwide cases {cases}</p>
             <p>Worldwide deaths {deaths}</p>
             <p>Recovered {recovered}</p>
             <p>Worldwide tests {tests}</p>
 
-            <h1>Todays Wordlwide stats</h1>
+            <br/>
+            <h1>Todays Worldwide stats</h1>
             <p>Cases {todayCases}</p>    
             <p>Deaths {todayDeaths}</p>    
             <p>Recovered {todayRecovered}</p>
-
-        </div>
+        </section>
     )
 }
 

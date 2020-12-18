@@ -22,17 +22,21 @@ body {
 	color: white;
 }
 
-@media (max-width: 990px) {
-	.app {
-		flex-direction: column;
+section {
+	padding: 2rem;
+}
 
-		&__stats {
-			flex-direction: column;
+@keyframes slow-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
 
-			.infoBox:not(:last-child) {
-				margin-right: 0;
-				margin-bottom: 1rem;
-			}
-		}
+@media (prefers-reduced-motion: no-preference) {
+	.navigation__logo {
+		animation: slow-spin infinite 20s linear;
 	}
 }

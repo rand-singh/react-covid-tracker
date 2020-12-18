@@ -1,5 +1,5 @@
 .navigation {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -94,5 +94,11 @@
 		.title {
 			font-size: 1rem;
 		}
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.navigation__logo {
+		animation: slow-spin infinite 20s linear;
 	}
 }
