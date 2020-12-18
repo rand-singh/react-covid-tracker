@@ -45,7 +45,7 @@ function Nav() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/vaccine" className={pathname === '/vaccine' ? 'active' : ''}>                                                        
+                        <Link to="/vaccine" className={pathname === '/vaccine' ? 'active' : ''}>
                             <span className="icon">
                                 <img alt="Vaccine Icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAACVUlEQVRogd2Zv07cQBDG5yhAiBpEuhQUSJzSkI6Sdws8EUUUJJCQTuKggYsoUyRBSt7h9KO4WWUZr9drE3nn+KqzvV5/3/y150ScAtgDboA5sFebzyAAu8AD//AEfKjNqxfUE48q4NH8Xg/PGE88AfuJc/49A9ylrJ/wUsMzG+NSHYbJZPJXRE5FZCEiUxG5dB1mavlFm+VLPOMCwEfgR65auc8Z4AD4qQSvc5Z34xklcheanRFxBex0kTXX57VEBAJoTrwS0bI2V8nGFZIgFgu6jkWYe14VgKqhlXp4CSHgEHiOBNfr9j1CxF6LRXwzHvQjomXNQo9jEV+BbT0/Z+w34lR8d6wNYr5bEaORbiHWEAFsAedK9Bk4AzYTYkI4uRVxQRNn5l43za5LxB/gGDjR49+JPao3u2ROaDgFEVM991nP/UrsU7XZ5d5cQ/Ie6/FURQF8aRFRpcRmq1Mk5EQ9EURcAFteRHQ2KlbVycKViNgTubfVTRUTl103IsLDBw8KEvfsj8E/PDxXnWKBtwX7uPBEWxiFD6dZ4T5+c6JgHzci7PdENozMPn5EmGvZMDJrq4n4LwNlHFSnNw+UPXliPfuEEigZKLvpE72H2NFA+V5Elm3rlPSlrIbOCxE51XvHxVusWTUnEmQGVavqOWHIDKpWnj1RXK1ceUIJ9f77y5UnIlJJIXpt0Py2CnpYvlf+VAFwBCw7LF9voFwCQ3iZIB4LG3+gXAKalecTzV5Stxp1oS03XFveIuEJ31ZP4V2IEBHRkPFZefoAmLFqgusrQkReAM2615DbuoY6AAAAAElFTkSuQmCC" />
                             </span>
@@ -55,7 +55,7 @@ function Nav() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/about">
+                        <Link to="/about" className={pathname === '/about' ? 'active' : ''}>
                             <span className="icon">
                                 <img alt="About Icon" src="data:image/png;base64,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" />
                             </span>
@@ -66,7 +66,6 @@ function Nav() {
                     </li>
                 </ul>
             </div>
-
         </nav>
     )
 }

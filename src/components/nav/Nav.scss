@@ -31,6 +31,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		-webkit-tap-highlight-color: transparent;
 
 		&.active {
 			color: #ff3e58;
@@ -94,11 +95,5 @@
 		.title {
 			font-size: 1rem;
 		}
-	}
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	.navigation__logo {
-		animation: slow-spin infinite 20s linear;
 	}
 }
