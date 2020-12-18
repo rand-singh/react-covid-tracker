@@ -27,17 +27,17 @@ function Worldwide() {
             <br/>
             <code>Updated: <time>{moment(updated).fromNow()}</time></code>
             <br/><br/>
+            <p>Recorded worldwide cases {prettyPrintStat(cases)}</p>
             <p>Active worldwide cases {prettyPrintStat(active)}</p>
-            <p>Recorded worldwide cases {cases}</p>
-            <p>Worldwide deaths {deaths}</p>
-            <p>Recovered {recovered}</p>
-            <p>Worldwide tests {tests}</p>
+            <p>Worldwide deaths {prettyPrintStat(deaths)}</p>
+            <p>Recovered {prettyPrintStat(recovered)}</p>
+            <p>Worldwide tests {prettyPrintStat(tests)}</p>
 
             <br/>
             <h1>Todays Worldwide stats</h1>
-            <p>Cases {todayCases}</p>    
-            <p>Deaths {todayDeaths}</p>    
-            <p>Recovered {todayRecovered}</p>
+            <p>Cases {prettyPrintStat(todayCases)}</p>    
+            <p>Deaths {prettyPrintStat(todayDeaths)}</p>    
+            <p>Recovered {prettyPrintStat(todayRecovered)}</p>
         </section>
     )
 }
