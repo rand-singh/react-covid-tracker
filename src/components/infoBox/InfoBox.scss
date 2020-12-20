@@ -1,7 +1,15 @@
 .stats {
+	display: flex;
+	justify-content: space-between;
+
 	.infoBox {
 		background-color: #2f3438;
 		margin-bottom: 1rem;
+		flex: 1 1;
+
+		&:not(:last-child) {
+			margin-right: 1rem;
+		}
 
 		&--selected {
 			border-color: greenyellow;
@@ -38,6 +46,16 @@
 			font-weight: 700;
 			font-size: 0.8rem;
 			margin-top: 0.5rem;
+		}
+	}
+}
+
+@media (max-width: 990px) {
+	.stats {
+		flex-direction: column;
+
+		.infoBox:not(:last-child) {
+			margin-right: 0;
 		}
 	}
 }
