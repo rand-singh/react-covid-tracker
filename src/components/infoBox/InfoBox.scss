@@ -1,13 +1,7 @@
-.app__stats {
+.stats {
 	.infoBox {
-		flex: 1;
-		cursor: pointer;
-		border-top: 10px solid transparent;
-		background-color: #252525;
-
-		&:not(:last-child) {
-			margin-right: 1rem;
-		}
+		background-color: #2f3438;
+		margin-bottom: 1rem;
 
 		&--selected {
 			border-color: greenyellow;
@@ -32,7 +26,6 @@
 			color: #cc1034;
 			font-weight: 600;
 			font-size: 1.75rem;
-			margin-bottom: 0.5rem;
 
 			small {
 				display: block;

@@ -22,8 +22,10 @@ body {
 	color: white;
 }
 
-section {
+section.container {
 	padding: 0 1rem;
+	padding-bottom: 90px;
+	padding-top: 100px;
 }
 
 @keyframes slow-spin {
